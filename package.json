@@ -1,0 +1,34 @@
+{
+    "name": "exam_section_2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "startWebPage": "nodemon ./src/main_webServer.js",
+        "testWithMocha": "mocha --recursive --ui tdd",
+        "testAndCoverage_via_nyc": "nyc mocha --recursive --ui tdd",
+        "testAndCoverage_via_istanbul": "istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive --ui tdd",
+        "testAndCoverage": "npm run testAndCoverage_via_istanbul && npm run testAndCoverage_via_nyc",
+        "openCoverageReport_inBrowser": "opn coverage/lcov-report/index.html",
+        "openCoverageReport": "npm run openCoverageReport_inBrowser",
+        "testAndCoverageAndReport": "npm run testAndCoverage && npm run openCoverageReport"
+
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^2.5.7",
+        "express": "^4.16.2"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.1",
+        "nodemon": "^1.12.1",
+        "nyc": "^11.3.0"
+    }
+}
